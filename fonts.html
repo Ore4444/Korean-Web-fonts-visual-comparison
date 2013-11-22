@@ -23,7 +23,8 @@
 			background-repeat: no-repeat;
 		}
 		dl {
-			display: none;
+			opacity: 0;
+			transition: opacity 3s;
 		}
 		dd {  font-size: 3em;  }
 		</style>
@@ -68,7 +69,7 @@
 			var fontShowcase = document.querySelector('dl');
 			var isFirstLetter = true;
 			input.addEventListener('keyup', function(e) {
-				if (isFirstLetter) fontShowcase.style.display = "initial"
+				if (isFirstLetter) fontShowcase.style.opacity = 1;
 				isFirstLetter = false;
 			    var ps = document.querySelectorAll('dd');
 			    var psArray = Array.prototype.slice.call(ps);
