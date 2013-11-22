@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Korean Fonts Comparison</title>
+		<style>
+		body {
+			display: -webkit-box; 
+			display: -moz-box;    
+			display: -ms-flexbox; 
+			display: -webkit-flex;
+			display: flex; 
+		}
+		section {
+			margin:  20px auto;
+		}
+		textarea {
+			width: 600px;
+			height: 120px;
+			border: 3px solid #cccccc;
+			padding: 5px;
+			font-family: Tahoma, sans-serif;
+			background-position: bottom right;
+			background-repeat: no-repeat;
+		}
+		dl {
+			display: none;
+		}
+		dd {  font-size: 3em;  }
+		</style>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/font-imports.css">
+	</head>
+	<body>
+	<section>
+		<textarea placeholder="Rinny, Rinny...
+    I love Korean letters and I'll be glad if you could feed me with some yummy glpyhs. "></textarea>
+		<dl>
+			<div>
+				<dt>Hanna</dt>
+				<dd style="font-family: 'Hanna';"></dd>
+			</div>
+			<div>
+				<dt>Nanum Brush Script</dt>
+				<dd style="font-family: 'NanumBrushScript';"></dd>
+			</div>
+			<div>
+				<dt>Nanum Gothic Coding</dt>
+				<dd style="font-family: 'NanumGothicCoding';"></dd>
+			</div>
+			<div>
+				<dt>Nanum Gothic</dt>
+				<dd style="font-family: 'NanumGothic';"></dd>
+			</div>
+			<div>
+				<dt>Nanum Myeongjo</dt>
+				<dd style="font-family: 'NanumMyeongjo';"></dd>
+			</div>
+			<div>
+				<dt>Nanum Pen Script</dt>
+				<dd style="font-family: 'NanumPenScript';"></dd>
+			</div>
+		</dl>
+	</section>
+
+		<script>
+			var input = document.querySelector('textarea');
+			var fontShowcase = document.querySelector('dl');
+			var isFirstLetter = true;
+			input.addEventListener('keyup', function(e) {
+				if (isFirstLetter) fontShowcase.style.display = "initial"
+				isFirstLetter = false;
+			    var ps = document.querySelectorAll('dd');
+			    var psArray = Array.prototype.slice.call(ps);
+			    psArray.forEach(function(p) {
+			        p.textContent = e.target.value;
+			    });
+			});
+		</script>
+	</body>
+</html>
